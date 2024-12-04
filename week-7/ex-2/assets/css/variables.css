@@ -1,0 +1,7 @@
+@import "fonts.css";
+
+:root {
+  --primary-color: #f06c25;
+  --text-font: "Baloo 2", sans-serif;
+  --text-color: #000;
+}

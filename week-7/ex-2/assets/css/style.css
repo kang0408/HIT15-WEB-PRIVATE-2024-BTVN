@@ -1,0 +1,145 @@
+@import "variables.css";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--text-font);
+}
+.social-icon {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.social-icon .icon-wrap {
+  width: 40px;
+}
+.social-icon .icon-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* Header */
+header {
+  display: flex;
+  padding: 20px 32px;
+  justify-content: space-between;
+  align-items: center;
+}
+header p {
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+/* Banner */
+#banner {
+  height: 1000px;
+}
+#banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* Main */
+main {
+  padding: 120px 190px 112px;
+}
+main .title {
+  font-size: 48px;
+  font-weight: 600;
+  display: inline-block;
+  position: relative;
+  margin-bottom: 32px;
+}
+/* Main section title */
+main .title::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 72px;
+  border: 2px solid var(--primary-color);
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+main .title span {
+  color: var(--primary-color);
+}
+/* About */
+#about {
+  text-align: center;
+  margin-bottom: 144px;
+}
+#about .content {
+  display: flex;
+  justify-content: space-between;
+  text-align: left;
+}
+#about .infor {
+  width: 50%;
+  font-size: 20px;
+  font-weight: 500;
+}
+#about .infor .heading {
+  font-size: 32px;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+#about .infor .social-icon {
+  margin-top: 24px;
+}
+#about .logo-wrap {
+  width: 260px;
+  height: 260px;
+}
+#about .logo-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+}
+/* Activities */
+#activities {
+  text-align: center;
+}
+#activities .content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 340px);
+  grid-gap: 20px;
+}
+#activities .content .activity-img-wrap {
+  width: 100%;
+  height: 100%;
+}
+#activities .content .activity-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+}
+#activities .activity-img-wrap:nth-child(1) {
+  grid-row: 1 / 3;
+}
+#activities .activity-img-wrap:nth-child(3) {
+  grid-column: 3 / 4;
+  grid-row: 1 / 3;
+}
+#activities .activity-img-wrap:nth-child(3) img {
+  object-position: -80px;
+}
+#activities .activity-img-wrap:nth-child(5) {
+  grid-column: 2 / 3;
+  grid-row: 2 / 4;
+}
+#activities .activity-img-wrap:last-child {
+  grid-column: span 3;
+}
+/* Footer */
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 32px 48px;
+  border-top: 1px solid var(--primary-color);
+}

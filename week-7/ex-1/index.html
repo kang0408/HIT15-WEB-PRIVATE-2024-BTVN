@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EX1</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(rgb(255, 97, 97), rgb(136, 136, 255));
+      }
+      .container {
+        width: 700px;
+        height: 400px;
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        grid-template-rows: repeat(9, 1fr);
+      }
+      .item {
+        border: 1px solid;
+      }
+      .item:nth-child(1) {
+        grid-column: 1 / 8;
+        background-color: #cadcc9;
+      }
+      .item:nth-child(2) {
+        grid-column: 1 / 5;
+        grid-row: 2 / 6;
+        background-color: rgb(245, 245, 33);
+      }
+      .item:nth-child(3) {
+        grid-column: 5 / 7;
+        background-color: rgb(136, 136, 255);
+      }
+      .item:nth-child(4) {
+        grid-row: 3 / 6;
+        background-color: rgb(255, 97, 97);
+      }
+      .item:nth-child(5) {
+        grid-row: 3 / 6;
+        background-color: #cecece;
+      }
+      .item:nth-child(6) {
+        grid-row: 2 / 4;
+        background-color: rgb(245, 245, 33);
+      }
+      .item:nth-child(7) {
+        grid-row: 4 / 9;
+        background-color: rgb(177, 0, 177);
+      }
+      .item:nth-child(8) {
+        grid-column: 1 / 4;
+        background-color: rgb(136, 136, 255);
+      }
+      .item:nth-child(9) {
+        grid-column: 1 / 4;
+        grid-row: 7 / 9;
+        background-color: rgb(177, 0, 177);
+      }
+      .item:nth-child(10) {
+        grid-column: 4 / 7;
+        grid-row: 6 / 8;
+        background-color: #cadcc9;
+      }
+      .item:nth-child(11) {
+        grid-column: 4 / 7;
+        background-color: rgb(245, 245, 33);
+      }
+      .item:last-child {
+        grid-column: 1 / 8;
+        background-color: rgb(255, 97, 97);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+    </div>
+  </body>
+</html>
