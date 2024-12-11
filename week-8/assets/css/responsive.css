@@ -1,0 +1,244 @@
+@import "variables.css";
+
+@media screen and (max-width: 1199px) {
+  /* Header */
+  header {
+    padding: 0 96px;
+    height: 550px;
+  }
+  /* Navigation */
+  nav {
+    position: relative;
+    z-index: 10;
+  }
+  nav ul {
+    gap: 32px;
+  }
+  /* Search */
+  .search-wrap {
+    gap: 16px;
+  }
+  /* Content */
+  header .content {
+    font-size: 18px;
+    max-width: 348px;
+    margin-top: 54px;
+  }
+  header .content .title {
+    font-size: 32px;
+  }
+  /* Coffee image */
+  header .coffee {
+    width: 300px;
+    height: 300px;
+    left: 45%;
+  }
+  header .coffee-item {
+    z-index: 1;
+    width: 250px;
+  }
+  /* Categories */
+  .categories {
+    font-size: 18px;
+    padding: 36px;
+    gap: 72px;
+  }
+  /* Main */
+  main {
+    margin-top: 124px;
+  }
+  /* Cold coffee*/
+  #cold-coffee {
+    padding: 0 96px;
+  }
+  #cold-coffee .content {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  #cold-coffee .content .coffee {
+    width: 48%;
+    flex: none;
+  }
+  /* Sign up */
+  #sign-up {
+    padding: 32px 96px;
+  }
+  /* Special menu */
+  #special-menu {
+    padding: 0 96px;
+  }
+  #special-menu .content {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  /* About us */
+  #about {
+    padding: 36px 96px;
+  }
+  #about img-wrap {
+    flex: 2;
+  }
+  #about content {
+    flex: 3;
+  }
+  /* Footer */
+  #footer {
+    padding: 0 96px;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  header {
+    padding: 0 48px;
+    background-image: linear-gradient(
+      to right,
+      #fff 0%,
+      #fff 70%,
+      var(--color-secondary) 70%,
+      var(--color-secondary) 100%
+    );
+  }
+  /* Search */
+  header .search {
+    border: 1px solid;
+  }
+  /* Content */
+  header .content {
+    max-width: 390px;
+    margin-top: 28px;
+  }
+  /* Coffee image */
+  header .coffee {
+    width: 200px;
+    height: 200px;
+    left: 57%;
+    top: 24%;
+  }
+  /* Categories */
+  .categories {
+    padding: 36px 18px;
+    font-size: 16px;
+  }
+  /* Main */
+  main {
+    margin-top: 96px;
+  }
+  /* Cold coffee */
+  #cold-coffee {
+    padding: 0 48px;
+  }
+  #cold-coffee .content .coffee {
+    width: 45%;
+    flex: none;
+  }
+  /* Sign up */
+  #sign-up {
+    padding: 36px 48px;
+  }
+  /* Special menu */
+  #special-menu {
+    padding: 0 48px;
+  }
+  /* About */
+  #about {
+    padding: 36px 48px;
+    gap: 48px;
+  }
+  /* Footer */
+  #footer {
+    padding: 0 48px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  /* Header */
+  header {
+    padding: 0 24px;
+    background-image: linear-gradient(
+      180deg,
+      #fff 0%,
+      #fff 75%,
+      var(--color-secondary) 75%,
+      var(--color-secondary) 100%
+    );
+    height: 85vh;
+  }
+  /* Search */
+  header .search-wrap {
+    display: none;
+  }
+  /* Content */
+  header .content {
+    position: relative;
+    z-index: 10;
+  }
+  /* Coffee image */
+  header .coffee {
+    display: none;
+  }
+  header .coffee-item {
+    width: 200px;
+    height: 200px;
+  }
+  /* Categories */
+  .categories {
+    flex-wrap: wrap;
+  }
+  .categories .cate-logo {
+    width: 40px;
+    height: 40px;
+  }
+  /* Main */
+  main {
+    margin-top: 36px;
+  }
+  main .content {
+    display: flex;
+    flex-direction: column;
+  }
+  main .content .coffee {
+    width: 100%;
+  }
+  /* Cold coffee */
+  #cold-coffee {
+    padding: 0 24px;
+  }
+  #cold-coffee .content .coffee {
+    width: 100%;
+    flex: none;
+  }
+  /* Sign up */
+  #sign-up {
+    padding: 36px 24px;
+  }
+  /* Special menu */
+  #special-menu {
+    padding: 0 24px;
+  }
+  #special-menu .content {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  /* About */
+  #about {
+    padding: 36px 24px;
+    gap: 48px;
+    flex-direction: column;
+  }
+  /* Footer */
+  #footer {
+    padding: 0 24px 24px 24px;
+  }
+  #footer .footer-header {
+    flex-direction: column;
+    gap: 16px;
+  }
+  #footer .footer-content {
+    padding: 0;
+  }
+  #footer .footer-content > div {
+    flex-direction: column;
+    gap: 32px;
+  }
+  #footer .footer-content .mail .mail-wrap {
+    justify-content: space-between;
+  }
+}
