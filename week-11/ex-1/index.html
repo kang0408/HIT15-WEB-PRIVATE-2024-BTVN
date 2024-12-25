@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tính chỉ số BMI</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div id="container">
+      <div class="result">
+        <p>Thông báo hiển thị tại đây!</p>
+      </div>
+      <h1>Tính chỉ số BMI</h1>
+      <div class="body">
+        <label for="mass">Cân nặng(kg): </label>
+        <input type="text" id="mass" placeholder="Nhập cân nặng" />
+        <br />
+        <label for="height">Chiều cao(m): </label>
+        <input type="text" id="height" placeholder="Nhập chiều cao" />
+        <br />
+        <button>Tính toán</button>
+      </div>
+    </div>
+
+    <script>
+      // get mass and height element
+      const mass = document.querySelector("#mass");
+      const height = document.querySelector("#height");
+      // get button element
+      const button = document.querySelector("button");
+      // get result element
+      const result = document.querySelector(".result");
+
+      // khởi tạo biến bmi
+      let bmi;
+      // lắng nghe sự kiện click cho button
+      button.addEventListener("click", function () {
+        // kiểm tra ô nhập đang trống
+        if (mass.value == "" || height.value == "") {
+          result.innerHTML = `<p>Hãy nhập thông tin đầy đủ</p>`;
+          return;
+        }
+
+        // lấy ra giá trị trong ô nhập bằng .value
+        bmi = mass.value / height.value ** 2;
+
+        //
+        const formatBmi = bmi.toFixed(2);
+
+        // kiểm tra điều kiện và thông báo kết quả
+        if (formatBmi < 18.5)
+          result.innerHTML = `<p>BMI: ${formatBmi} - Cơ thể bạn quá là gầy!</p>`;
+        else if (formatBmi >= 18.5 && formatBmi <= 24.9)
+          result.innerHTML = `<p>BMI: ${formatBmi} - Cơ thể bạn đang gất khỏe mạnh!</p>`;
+        else if (formatBmi >= 25.0 && formatBmi <= 29.9)
+          result.innerHTML = `<p>BMI: ${formatBmi} - Bạn đang bị thừa cân đó!</p>`;
+        else if (formatBmi >= 30.0 && formatBmi <= 34.9)
+          result.innerHTML = `<p>BMI: ${formatBmi} - Bạn đang bị béo phì cấp độ I</p>`;
+        else if (formatBmi >= 35.0 && formatBmi <= 39.9)
+          result.innerHTML = `<p>Bạn đang bị béo phì cấp độ II</p>`;
+        else
+          result.innerHTML = `<p>BMI: ${formatBmi} - Bạn đang bị béo phì cấp độ III</p>`;
+      });
+
+      // vô hiệu hóa trick lỏ
+      document.addEventListener("contextmenu", function (event) {
+        event.preventDefault(); // Ngăn menu chuột phải
+        alert("Chuột phải đã bị vô hiệu hóa!");
+      });
+
+      document.addEventListener("keydown", function (event) {
+        // Ngăn chặn F12
+        if (event.key === "F12") {
+          event.preventDefault();
+          alert("F12 đã bị vô hiệu hóa!");
+        }
+        // Ngăn chặn tổ hợp Ctrl+Shift+I (Mở DevTools)
+        if (event.ctrlKey && event.shiftKey && event.key === "I") {
+          event.preventDefault();
+          alert("Ctrl+Shift+I đã bị vô hiệu hóa!");
+        }
+        // Ngăn chặn tổ hợp Ctrl+Shift+J (Mở DevTools - console)
+        if (event.ctrlKey && event.shiftKey && event.key === "J") {
+          event.preventDefault();
+          alert("Ctrl+Shift+J đã bị vô hiệu hóa!");
+        }
+        // Ngăn chặn Ctrl+U (Xem mã nguồn trang)
+        if (event.ctrlKey && event.key === "u") {
+          event.preventDefault();
+          alert("Ctrl+U đã bị vô hiệu hóa!");
+        }
+      });
+    </script>
+  </body>
+</html>

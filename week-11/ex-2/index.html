@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sinh số tự động</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div id="container">
+      <h1>Sinh số tự động</h1>
+      <input type="text" id="number" placeholder="Nhập số lượng" />
+      <button>Tạo</button>
+      <div class="count">
+        <p>Số chẵn: <span class="even">None</span></p>
+        <p>Số lẻ: <span class="odd">None</span></p>
+        <p>Số nguyên tố: <span class="prime">None</span></p>
+      </div>
+      <div class="body"></div>
+    </div>
+    <script>
+      // get input element
+      const nums = document.querySelector("input");
+      // get button element
+      const button = document.querySelector("button");
+      // get body element
+      const body = document.querySelector("#container .body");
+
+      // get even element
+      const even = document.querySelector("#container .count .even");
+      // get odd element
+      const odd = document.querySelector("#container .count .odd");
+      // get prime element
+      const prime = document.querySelector("#container .count .prime");
+
+      // kiểm tra số chẵn
+      function isEven(number) {
+        return number % 2 == 0;
+      }
+
+      // kiểm tra số lẻ
+      function isOdd(number) {
+        return number % 2 != 0;
+      }
+
+      // kiểm tra số nguyên tố
+      function isPrime(number) {
+        // Số nhỏ hơn 2 không phải là số nguyên tố
+        if (number < 2) {
+          return false;
+        }
+
+        // Kiểm tra từ 2 đến căn bậc hai của số
+        for (let i = 2; i <= Math.sqrt(number); i++) {
+          if (number % i === 0) {
+            return false; // Nếu chia hết, không phải số nguyên tố
+          }
+        }
+
+        return true; // Là số nguyên tố
+      }
+
+      // tạo biến đếm
+      let cntEven = 0;
+      let cntOdd = 0;
+      let cntPrime = 0;
+
+      button.addEventListener("click", function () {
+        for (let i = 0; i < nums.value; i++) {
+          // tạo ra 1 thẻ div
+          const num = document.createElement("div");
+          // kiểm tra số
+          if (isPrime(i)) {
+            num.style.backgroundColor = "#FD5E53";
+            cntPrime++;
+          } else if (isEven(i)) {
+            num.style.backgroundColor = "#79d7be";
+            cntEven++;
+          } else {
+            num.style.backgroundColor = "#FDDB3A";
+            cntOdd++;
+          }
+          // gán nội dung cho thẻ div
+          num.innerHTML = i;
+
+          // thêm thẻ div vào body
+          body.appendChild(num);
+        }
+
+        // gán giá trị đếm các số
+        even.innerHTML = cntEven;
+        odd.innerHTML = cntOdd;
+        prime.innerHTML = cntPrime;
+      });
+
+      // vô hiệu hóa trick lỏ
+      document.addEventListener("contextmenu", function (event) {
+        event.preventDefault(); // Ngăn menu chuột phải
+        alert("Chuột phải đã bị vô hiệu hóa!");
+      });
+
+      document.addEventListener("keydown", function (event) {
+        // Ngăn chặn F12
+        if (event.key === "F12") {
+          event.preventDefault();
+          alert("F12 đã bị vô hiệu hóa!");
+        }
+        // Ngăn chặn tổ hợp Ctrl+Shift+I (Mở DevTools)
+        if (event.ctrlKey && event.shiftKey && event.key === "I") {
+          event.preventDefault();
+          alert("Ctrl+Shift+I đã bị vô hiệu hóa!");
+        }
+        // Ngăn chặn tổ hợp Ctrl+Shift+J (Mở DevTools - console)
+        if (event.ctrlKey && event.shiftKey && event.key === "J") {
+          event.preventDefault();
+          alert("Ctrl+Shift+J đã bị vô hiệu hóa!");
+        }
+        // Ngăn chặn Ctrl+U (Xem mã nguồn trang)
+        if (event.ctrlKey && event.key === "u") {
+          event.preventDefault();
+          alert("Ctrl+U đã bị vô hiệu hóa!");
+        }
+      });
+    </script>
+  </body>
+</html>
