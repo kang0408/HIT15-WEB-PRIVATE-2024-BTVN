@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #fd8b51;
+  --secondary-color: #cb6040;
+  --third-color: #f2e5bf;
+  --fourth-color: #257180;
+  --text-color-dark: rgb(40, 40, 40);
+  --text-color-light: #fff;
+  --text-font: "Be Vietnam Pro", serif;
+}
+
+body {
+  font-family: var(--text-font);
+  background-color: var(--third-color);
+}
+
+/* Container */
+#container {
+  width: 750px;
+  margin: 50px auto;
+  text-align: center;
+}
+
+/* Search box */
+#container .search {
+  margin-top: 16px;
+  display: flex;
+}
+
+#container .search input {
+  height: 48px;
+  border: none;
+  outline: none;
+  padding: 0 16px;
+  flex: 1;
+  border-top: 2px solid transparent;
+  border-left: 2px solid transparent;
+  border-bottom: 2px solid transparent;
+}
+
+#container .search input:focus {
+  border-color: var(--primary-color);
+}
+
+#container .search button {
+  height: 48px;
+  padding: 0 32px;
+  border: none;
+  cursor: pointer;
+  background: var(--fourth-color);
+  color: var(--text-color-light);
+  font-size: 20px;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+#container .search button:hover {
+  opacity: 0.8;
+}
+/* Result */
+#container .result {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 32px;
+}
+/* Message */
+#container .msg {
+  margin-top: 32px;
+  font-size: 24px;
+}
+/* List character */
+#container .list {
+  list-style: none;
+  margin-top: 32px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+
+#container .list li {
+  padding: 16px 32px;
+  cursor: pointer;
+  background: var(--primary-color);
+  border-radius: 8px;
+}
+
+#container .list li:hover {
+  opacity: 0.7;
+  background: var(--secondary-color);
+}

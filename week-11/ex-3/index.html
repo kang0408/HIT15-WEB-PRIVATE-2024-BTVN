@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vẽ hình v1.0</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div id="container">
+      <div class="options">
+        <h1>Vẽ hình v1.0</h1>
+        <table>
+          <tr>
+            <td><label for="width">Chiều rộng</label></td>
+            <td>
+              <input type="text" id="width" placeholder="Nhập chiều rộng" />
+            </td>
+          </tr>
+          <tr>
+            <td><label for="height">Chiều cao</label></td>
+            <td>
+              <input type="text" id="height" placeholder="Nhập chiều cao" />
+            </td>
+          </tr>
+          <tr>
+            <td><label for="padding">Padding</label></td>
+            <td>
+              <input type="text" id="padding" placeholder="Nhập padding" />
+            </td>
+          </tr>
+          <tr>
+            <td><label for="margin">Margin</label></td>
+            <td><input type="text" id="margin" placeholder="Nhập margin" /></td>
+          </tr>
+          <tr>
+            <td><label for="background">Màu nền (Hex, gba, rgba)</label></td>
+            <td>
+              <input type="text" id="background" placeholder="Nhập màu nền" />
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <label for="background-image">Hình nền (Đường link online)</label>
+            </td>
+            <td>
+              <input
+                type="text"
+                id="background-image"
+                placeholder="Nhập đường dẫn hình nền"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td><label for="color">Màu chữ</label></td>
+            <td><input type="text" id="color" placeholder="Nhập màu chữ" /></td>
+          </tr>
+          <tr>
+            <td><label for="content">Nội dung nhỏ</label></td>
+            <td>
+              <input type="text" id="content" placeholder="Nhập nội dung" />
+            </td>
+          </tr>
+        </table>
+        <button class="draw">Vẽ hình</button>
+        <button class="reset">Reset</button>
+      </div>
+      <main>
+        <div class="square">Xin chào</div>
+      </main>
+    </div>
+    <script src="./index.js"></script>
+  </body>
+</html>
