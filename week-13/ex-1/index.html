@@ -88,44 +88,6 @@
       <div class="result"></div>
     </div>
 
-    <script>
-      const checkButton = document.querySelector(".check-btn");
-      const inputBox = document.querySelector(".input-box");
-      const resultDiv = document.querySelector(".result");
-
-      checkButton.addEventListener("click", () => {
-        const input = inputBox.value;
-        if (input.trim() === "") {
-          resultDiv.innerHTML = "<p>Hãy nhập đúng chuỗi kí tự</p>";
-          return;
-        }
-
-        const normalized = input.toLowerCase();
-        const reversed = normalized.split("").reverse().join("");
-        const isPalindrome = normalized === reversed;
-
-        resultDiv.innerHTML =
-          "<p>" +
-          (isPalindrome ? "Đây là palindrome!" : "Đây không phải palindrome.") +
-          "</p>";
-
-        resultDiv.innerHTML += "<div>";
-        for (let i = 0; i < input.length; i++) {
-          const char = input[i];
-          const normalizedChar = char.toLowerCase();
-          const correct =
-            normalizedChar === normalized[normalized.length - 1 - i];
-          const className = correct ? "char correct" : "char incorrect";
-          resultDiv.innerHTML += `<span class="${className}">${char}</span>`;
-        }
-        resultDiv.innerHTML += "</div>";
-      });
-
-      inputBox.addEventListener("keypress", (e) => {
-        if (e.key === "Enter") {
-          checkButton.click();
-        }
-      });
-    </script>
+    <script src="./index.js"></script>
   </body>
 </html>
