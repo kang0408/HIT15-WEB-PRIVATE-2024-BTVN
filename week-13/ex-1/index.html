@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Palindrome Checker v1.0</title>
+    <style>
+      body {
+        font-family: "Verdana", sans-serif;
+        background-color: #1e1e2f;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .container {
+        background: #2c2c54;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        width: 400px;
+        text-align: center;
+        color: #f1f1f1;
+      }
+
+      h1 {
+        font-size: 26px;
+        margin-bottom: 20px;
+        color: #ffdd59;
+      }
+
+      .input-box {
+        width: calc(100% - 50px);
+        padding: 10px;
+        border: 1px solid #575fcf;
+        border-radius: 5px;
+        outline: none;
+        margin-bottom: 20px;
+        background-color: #1e272e;
+        color: #ffffff;
+      }
+
+      .check-btn {
+        padding: 10px;
+        border: none;
+        background-color: #0be881;
+        color: #1e1e2f;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+      }
+
+      .check-btn:hover {
+        background-color: #05c46b;
+      }
+
+      .result {
+        margin-top: 20px;
+        font-size: 18px;
+      }
+
+      .char {
+        display: inline-block;
+        padding: 5px 10px;
+        margin: 2px;
+        border-radius: 4px;
+        color: #1e1e2f;
+        font-weight: bold;
+      }
+
+      .correct {
+        background-color: #0be881;
+      }
+
+      .incorrect {
+        background-color: #ff3f34;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Palindrome Checker v1.0</h1>
+      <input type="text" class="input-box" placeholder="Enter a string..." />
+      <button class="check-btn">Check</button>
+      <div class="result"></div>
+    </div>
+
+    <script>
+      const checkButton = document.querySelector(".check-btn");
+      const inputBox = document.querySelector(".input-box");
+      const resultDiv = document.querySelector(".result");
+
+      checkButton.addEventListener("click", () => {
+        const input = inputBox.value;
+        if (input.trim() === "") {
+          resultDiv.innerHTML = "<p>Hãy nhập đúng chuỗi kí tự</p>";
+          return;
+        }
+
+        const normalized = input.toLowerCase();
+        const reversed = normalized.split("").reverse().join("");
+        const isPalindrome = normalized === reversed;
+
+        resultDiv.innerHTML =
+          "<p>" +
+          (isPalindrome ? "Đây là palindrome!" : "Đây không phải palindrome.") +
+          "</p>";
+
+        resultDiv.innerHTML += "<div>";
+        for (let i = 0; i < input.length; i++) {
+          const char = input[i];
+          const normalizedChar = char.toLowerCase();
+          const correct =
+            normalizedChar === normalized[normalized.length - 1 - i];
+          const className = correct ? "char correct" : "char incorrect";
+          resultDiv.innerHTML += `<span class="${className}">${char}</span>`;
+        }
+        resultDiv.innerHTML += "</div>";
+      });
+
+      inputBox.addEventListener("keypress", (e) => {
+        if (e.key === "Enter") {
+          checkButton.click();
+        }
+      });
+    </script>
+  </body>
+</html>
