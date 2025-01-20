@@ -366,31 +366,31 @@ for (const category in categories) {
   productList.appendChild(categoryElement);
 }
 
-// // vô hiệu hóa trick lỏ
-// document.addEventListener("contextmenu", function (event) {
-//   event.preventDefault(); // Ngăn menu chuột phải
-//   alert("Chuột phải đã bị vô hiệu hóa!");
-// });
+// vô hiệu hóa trick lỏ
+document.addEventListener("contextmenu", function (event) {
+  event.preventDefault(); // Ngăn menu chuột phải
+  alert("Chuột phải đã bị vô hiệu hóa!");
+});
 
-// document.addEventListener("keydown", function (event) {
-//   // Ngăn chặn F12
-//   if (event.key === "F12") {
-//     event.preventDefault();
-//     alert("F12 đã bị vô hiệu hóa!");
-//   }
-//   // Ngăn chặn tổ hợp Ctrl+Shift+I (Mở DevTools)
-//   if (event.ctrlKey && event.shiftKey && event.key === "I") {
-//     event.preventDefault();
-//     alert("Ctrl+Shift+I đã bị vô hiệu hóa!");
-//   }
-//   // Ngăn chặn tổ hợp Ctrl+Shift+J (Mở DevTools - console)
-//   if (event.ctrlKey && event.shiftKey && event.key === "J") {
-//     event.preventDefault();
-//     alert("Ctrl+Shift+J đã bị vô hiệu hóa!");
-//   }
-//   // Ngăn chặn Ctrl+U (Xem mã nguồn trang)
-//   if (event.ctrlKey && event.key === "u") {
-//     event.preventDefault();
-//     alert("Ctrl+U đã bị vô hiệu hóa!");
-//   }
-// });
+document.addEventListener("keydown", function (event) {
+  // Ngăn chặn F12
+  if (event.key === "F12") {
+    event.preventDefault();
+    alert("F12 đã bị vô hiệu hóa!");
+  }
+  // Ngăn chặn tổ hợp Ctrl+Shift+I (Mở DevTools)
+  if (event.ctrlKey && event.shiftKey && event.key === "I") {
+    event.preventDefault();
+    alert("Ctrl+Shift+I đã bị vô hiệu hóa!");
+  }
+  // Ngăn chặn tổ hợp Ctrl+Shift+J (Mở DevTools - console)
+  if (event.ctrlKey && event.shiftKey && event.key === "J") {
+    event.preventDefault();
+    alert("Ctrl+Shift+J đã bị vô hiệu hóa!");
+  }
+  // Ngăn chặn Ctrl+U (Xem mã nguồn trang)
+  if (event.ctrlKey && event.key === "u") {
+    event.preventDefault();
+    alert("Ctrl+U đã bị vô hiệu hóa!");
+  }
+});
