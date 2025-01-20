@@ -83,7 +83,7 @@ h1 {
 }
 
 .todo-item p {
-  max-width: 500px;
+  max-width: 300px;
 }
 
 .todo-item textarea {
